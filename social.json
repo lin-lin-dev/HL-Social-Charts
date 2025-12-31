@@ -1,0 +1,411 @@
+[
+	{
+		"CharacterID": "AbrahamRonen",
+		"Groups": [
+			"Slytherin",
+			"Hogwarts Staff"
+		]
+	},
+	{
+		"CharacterID": "Scrope",
+		"Groups": [
+			"Non-Academic Residents"
+		]
+	},
+	{
+		"CharacterID": "Deek",
+		"Groups": [
+			"Non-Academic Residents"
+		]
+	},
+	{
+		"CharacterID": "BloodyBaron",
+		"Groups": [
+			"Slytherin",
+			"Non-Academic Residents"
+		]
+	},
+	{
+		"CharacterID": "GreyLady",
+		"Groups": [
+			"Ravenclaw",
+			"Non-Academic Residents"
+		]
+	},
+	{
+		"CharacterID": "DumfreyWestland",
+		"Groups": [
+			"Non-Academic Residents"
+		]
+	},
+	{
+		"CharacterID": "NearlyHeadlessNick",
+		"Groups": [
+			"Gryffindor",
+			"Non-Academic Residents"
+		]
+	},
+	{
+		"CharacterID": "Peeves",
+		"Groups": [
+			"Non-Academic Residents"
+		]
+	},
+	{
+		"CharacterID": "SirNestorAmset",
+		"Groups": [
+			"Non-Academic Residents"
+		]
+	},
+	{
+		"CharacterID": "NoreenBlainey",
+		"Groups": [
+			"Hufflepuff",
+			"Hogwarts Staff"
+		]
+	},
+	{
+		"CharacterID": "AgnesScribner",
+		"Groups": [
+			"Hogwarts Staff"
+		]
+	},
+	{
+		"CharacterID": "SironaRyan",
+		"Groups": [
+			"Ravenclaw",
+			"Outside of Hogwarts"
+		]
+	},
+	{
+		"CharacterID": "AesopSharp",
+		"Groups": [
+			"Slytherin",
+			"Hogwarts Staff"
+		]
+	},
+	{
+		"CharacterID": "DinahHecat",
+		"Groups": [
+			"Ravenclaw",
+			"Hogwarts Staff"
+		]
+	},
+	{
+		"CharacterID": "GladwinMoon",
+		"Groups": [
+			"Hogwarts Staff"
+		]
+	},
+	{
+		"CharacterID": "MirabelGarlick",
+		"Groups": [
+			"Hufflepuff",
+			"Hogwarts Staff"
+		]
+	},
+	{
+		"CharacterID": "MatildaWeasley",
+		"Groups": [
+			"Gryffindor",
+			"Hogwarts Staff"
+		]
+	},
+	{
+		"CharacterID": "MudiwaOnai",
+		"Groups": [
+			"Hogwarts Staff"
+		]
+	},
+	{
+		"CharacterID": "SatyavatiShah",
+		"Groups": [
+			"Ravenclaw",
+			"Hogwarts Staff"
+		]
+	},
+	{
+		"CharacterID": "BaiHowin",
+		"Groups": [
+			"Hufflepuff",
+			"Hogwarts Staff"
+		]
+	},
+	{
+		"CharacterID": "ChiyoKogawa",
+		"Groups": [
+			"Hogwarts Staff"
+		]
+	},
+	{
+		"CharacterID": "CuthbertBinns",
+		"Groups": [
+			"Hogwarts Staff"
+		]
+	},
+	{
+		"CharacterID": "EleazarFig",
+		"Groups": [
+			"Gryffindor",
+			"Hogwarts Staff"
+		]
+	},
+	{
+		"CharacterID": "PhineasBlack",
+		"Groups": [
+			"Slytherin",
+			"Hogwarts Staff"
+		]
+	},
+	{
+		"CharacterID": "AndrewLarson",
+		"Groups": [
+			"Student",
+			"Ravenclaw"
+		]
+	},
+	{
+		"CharacterID": "PoppySweeting",
+		"Groups": [
+			"Student",
+			"Hufflepuff"
+		]
+	},
+	{
+		"CharacterID": "RowlandOakes",
+		"Groups": [
+			"Outside of Hogwarts"
+		]
+	},
+	{
+		"CharacterID": "AdelaideOakes",
+		"Groups": [
+			"Student",
+			"Hufflepuff"
+		]
+	},
+	{
+		"CharacterID": "OminisGaunt",
+		"Groups": [
+			"Student",
+			"Slytherin"
+		]
+	},
+	{
+		"CharacterID": "AmitKakkar",
+		"Groups": [
+			"Student",
+			"Ravenclaw"
+		]
+	},
+	{
+		"CharacterID": "ArthurSiggs",
+		"Groups": [
+			"Student",
+			"Hufflepuff"
+		]
+	},
+	{
+		"CharacterID": "AstoriaCrickett",
+		"Groups": [
+			"Student",
+			"Ravenclaw"
+		]
+	},
+	{
+		"CharacterID": "CharlotteMorrison",
+		"Groups": [
+			"Student",
+			"Hufflepuff"
+		]
+	},
+	{
+		"CharacterID": "ConstanceDagworth",
+		"Groups": [
+			"Student",
+			"Ravenclaw"
+		]
+	},
+	{
+		"CharacterID": "CressidaBlume",
+		"Groups": [
+			"Student",
+			"Gryffindor"
+		]
+	},
+	{
+		"CharacterID": "DuncanHobhouse",
+		"Groups": [
+			"Student",
+			"Ravenclaw"
+		]
+	},
+	{
+		"CharacterID": "EricNorthcott",
+		"Groups": [
+			"Student",
+			"Gryffindor"
+		]
+	},
+	{
+		"CharacterID": "EvangelineBardsley",
+		"Groups": [
+			"Student",
+			"Hufflepuff"
+		]
+	},
+	{
+		"CharacterID": "EverettClopton",
+		"Groups": [
+			"Student",
+			"Ravenclaw"
+		]
+	},
+	{
+		"CharacterID": "GarrethWeasley",
+		"Groups": [
+			"Student",
+			"Gryffindor"
+		]
+	},
+	{
+		"CharacterID": "GertrudeWigley",
+		"Groups": [
+			"Student",
+			"Ravenclaw"
+		]
+	},
+	{
+		"CharacterID": "GraceWaldegrave",
+		"Groups": [
+			"Student",
+			"Slytherin"
+		]
+	},
+	{
+		"CharacterID": "HectorFawley",
+		"Groups": [
+			"Student",
+			"Ravenclaw"
+		]
+	},
+	{
+		"CharacterID": "HectorWeasley",
+		"Groups": [
+			"Student",
+			"Gryffindor"
+		]
+	},
+	{
+		"CharacterID": "HerbertFleming",
+		"Groups": [
+			"Student",
+			"Slytherin"
+		]
+	},
+	{
+		"CharacterID": "HildaLoddington",
+		"Groups": [
+			"Student",
+			"Slytherin"
+		]
+	},
+	{
+		"CharacterID": "LawrenceDavies",
+		"Groups": [
+			"Student",
+			"Gryffindor"
+		]
+	},
+	{
+		"CharacterID": "LeanderPrewett",
+		"Groups": [
+			"Student",
+			"Gryffindor"
+		]
+	},
+	{
+		"CharacterID": "LenoraAbbott",
+		"Groups": [
+			"Student",
+			"Hufflepuff"
+		]
+	},
+	{
+		"CharacterID": "LucanBrattleby",
+		"Groups": [
+			"Student",
+			"Gryffindor"
+		]
+	},
+	{
+		"CharacterID": "MahendraKapoor",
+		"Groups": [
+			"Student",
+			"Ravenclaw"
+		]
+	},
+	{
+		"CharacterID": "NatsaiOnai",
+		"Groups": [
+			"Student",
+			"Gryffindor"
+		]
+	},
+	{
+		"CharacterID": "NellieOggspire",
+		"Groups": [
+			"Student",
+			"Gryffindor"
+		]
+	},
+	{
+		"CharacterID": "NeridaRoberts",
+		"Groups": [
+			"Student",
+			"Slytherin"
+		]
+	},
+	{
+		"CharacterID": "OwenWynn",
+		"Groups": [
+			"Student",
+			"Slytherin"
+		]
+	},
+	{
+		"CharacterID": "FrancisDoyle",
+		"Groups": [
+			"Student",
+			"Slytherin"
+		]
+	},
+	{
+		"CharacterID": "SamanthaDale",
+		"Groups": [
+			"Student",
+			"Ravenclaw"
+		]
+	},
+	{
+		"CharacterID": "SebastianSallow",
+		"Groups": [
+			"Student",
+			"Slytherin"
+		]
+	},
+	{
+		"CharacterID": "SophroniaFranklin",
+		"Groups": [
+			"Student",
+			"Ravenclaw"
+		]
+	},
+	{
+		"CharacterID": "VioletMcDowell",
+		"Groups": [
+			"Student",
+			"Slytherin"
+		]
+	}
+]

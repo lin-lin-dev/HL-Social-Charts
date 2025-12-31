@@ -1,0 +1,4 @@
+CharacterID,TargetCharacterID,SocialCapital,SocialCapitalStatus,ConnectionStatus,FixedSCBoost,TempSCBoost,SCLimit
+GarrethWeasley,Player0,888,Friendly,,,,1000
+LeanderPrewett,Player0,890,Friendly,,,,1000
+EricNorthcott,Player0,792,Friendly,,,,1000

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts Social Network</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        #container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        #visualization {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .node-label {
+            font-size: 12px;
+            font-weight: 500;
+            pointer-events: none;
+        }
+        .link-label {
+            font-size: 11px;
+            fill: #666;
+            pointer-events: none;
+        }
+        .group-hull {
+            stroke-linejoin: round;
+            stroke-width: 4;
+        }
+        #controls {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 8px 16px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #1d4ed8;
+        }
+        .info {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f0f9ff;
+            border-left: 4px solid #2563eb;
+            font-size: 13px;
+            color: #1e40af;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Hogwarts Social Network Visualization</h1>
+        <a href="index-circle.html">Circle View</a>
+        <a href="index.html">Square View</a>
+        <div id="controls">
+            <p><strong>Data files:</strong> Place relationships.csv, social.json, and characters.json in the same folder as this HTML file.</p>
+            <div class="info">
+                Drag nodes to rearrange them. Group boundaries will automatically adjust to encompass their members.
+            </div>
+        </div>
+
+        <h3>Filters:</h3>
+        <div>
+            <label><input type="checkbox" id="filter-all" checked> All</label>
+            <label><input type="checkbox" id="filter-staff"> Staff</label>
+            <label><input type="checkbox" id="filter-students"> Students</label>
+            <label><input type="checkbox" id="filter-residents"> Residents</label>
+            <label><input type="checkbox" id="filter-outsiders"> Outsiders</label>
+            <label><input type="checkbox" id="filter-slytherin"> Slytherin</label>
+            <label><input type="checkbox" id="filter-ravenclaw"> Ravenclaw</label>
+            <label><input type="checkbox" id="filter-hufflepuff"> Hufflepuff</label>
+            <label><input type="checkbox" id="filter-gryffindor"> Gryffindor</label>
+        </div>
+        <button id="reset-filters">Reset filters</button>
+        <select id="focus-select"></select>
+        
+
+        <div id="visualization">
+            <svg id="svg"></svg>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

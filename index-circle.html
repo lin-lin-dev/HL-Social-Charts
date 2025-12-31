@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts Social Network - Circle View</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        #container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        #visualization {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        #controls {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        .filter-row {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .filter-group label {
+            font-weight: 600;
+            font-size: 14px;
+            color: #374151;
+        }
+        select {
+            padding: 10px 14px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            min-width: 250px;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 12px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #667eea;
+        }
+        .checkbox-item label {
+            font-size: 13px;
+            color: #4b5563;
+            cursor: pointer;
+            font-weight: 400;
+        }
+        button {
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        .info {
+            margin-top: 15px;
+            padding: 12px;
+            background: #f0f9ff;
+            border-left: 4px solid #667eea;
+            font-size: 13px;
+            color: #1e40af;
+            border-radius: 4px;
+        }
+        .node {
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .node.inactive {
+            opacity: 0.3;
+        }
+        .link-path {
+            transition: opacity 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Hogwarts Legacy Semi-Canonical Character Relationships Circle Chart</h1>
+        <a href="index.html">Square View</a>
+        <a href="index-circle.html">Circle View</a>
+        
+        <div id="legend" style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+            <h3 style="margin: 0 0 15px 0; color: #374151; font-size: 18px;">Relationship Types</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 40px; height: 4px; background: #90f8d5ff; border-radius: 2px;"></div>
+                    <span style="font-size: 14px; color: #4b5563;">Cordial</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 40px; height: 4px; background: #00a46dff; border-radius: 2px;"></div>
+                    <span style="font-size: 14px; color: #4b5563;">Friend</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 40px; height: 4px; background: #006241ff; border-radius: 2px;"></div>
+                    <span style="font-size: 14px; color: #4b5563;">Best Friend / Companion</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 40px; height: 4px; background: #b55e16ff; border-radius: 2px;"></div>
+                    <span style="font-size: 14px; color: #4b5563;">Rival / Dislike</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 40px; height: 4px; background: #821818ff; border-radius: 2px;"></div>
+                    <span style="font-size: 14px; color: #4b5563;">Enemy / Hate</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 40px; height: 4px; background: #ff7af6ff; border-radius: 2px;"></div>
+                    <span style="font-size: 14px; color: #4b5563;">Love Interest</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 40px; height: 4px; background: #3b82f6; border-radius: 2px;"></div>
+                    <span style="font-size: 14px; color: #4b5563;">Family</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 40px; height: 4px; background: #6b7280; border-radius: 2px;"></div>
+                    <span style="font-size: 14px; color: #4b5563;">Familiar</span>
+                </div>
+            </div>
+            <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e5e7eb;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="display: flex; width: 40px; height: 4px;">
+                        <div style="width: 20px; background: #10b981; border-radius: 2px 0 0 2px;"></div>
+                        <div style="width: 20px; background: #f59e0b; border-radius: 0 2px 2px 0;"></div>
+                    </div>
+                    <span style="font-size: 14px; color: #4b5563; font-style: italic;">Split color = Different feelings each direction</span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="controls">
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="focus-select">Focus Character:</label>
+                    <select id="focus-select">
+                        <option value="">All Characters (Circle View)</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Show Groups:</label>
+                    <div class="checkbox-grid">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="filter-all" checked>
+                            <label for="filter-all">All</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="filter-staff" checked>
+                            <label for="filter-staff">Staff</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="filter-students" checked>
+                            <label for="filter-students">Students</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="filter-residents" checked>
+                            <label for="filter-residents">Residents</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="filter-outsiders" checked>
+                            <label for="filter-outsiders">Outsiders</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="filter-slytherin" checked>
+                            <label for="filter-slytherin">Slytherin</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="filter-ravenclaw" checked>
+                            <label for="filter-ravenclaw">Ravenclaw</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="filter-hufflepuff" checked>
+                            <label for="filter-hufflepuff">Hufflepuff</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="filter-gryffindor" checked>
+                            <label for="filter-gryffindor">Gryffindor</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="reset-filters">Reset Filters</button>
+            
+            <div class="info">
+                <strong>Circle View:</strong> Click a character to disable/enable their relationships. <strong>Focus View:</strong> Select a character from the dropdown to see only their connections.
+            </div>
+        </div>
+        <div id="visualization">
+            <svg id="svg"></svg>
+        </div>
+    </div>
+
+    <script src="main-circle.js"></script>
+</body>
+</html>
